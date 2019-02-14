@@ -1,3 +1,8 @@
+# Marcos y Patrones
+
+## Objetivo
+Ejecutar actividades de diseño detallado de software mediante la implementación de un servidor
+http básico de prueba
 
 ## Descripción del procesamiento
 
