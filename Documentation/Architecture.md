@@ -17,7 +17,7 @@ http básico de prueba
 ## Diagramas
 
 ### Diagrama de Componentes
- [Diagrama de Componentes](https://drive.google.com/file/d/1f8nMRdii9rgghjJXw1yMWbSsWKuabmQg/view?usp=sharing)
+ - [Diagrama de Componentes](https://drive.google.com/file/d/1f8nMRdii9rgghjJXw1yMWbSsWKuabmQg/view?usp=sharing)
  ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-componentes-diagram.png)
  - Diagrama de clases
  - Diagrama de actividades
