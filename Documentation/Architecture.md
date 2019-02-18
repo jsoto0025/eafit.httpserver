@@ -23,6 +23,10 @@ http básico de prueba
  ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-componentes-diagram.png)
 
 #### Diagrama de clases
+
+ - [Diagrama de clases](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
+ ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-clases-diagramB.png)
+
 #### Diagrama de despliegue
 ### Diagramas de Comportamiento
 #### Diagrama de actividades
