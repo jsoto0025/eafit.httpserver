@@ -6,6 +6,8 @@
 
 * [Descripción del procesamiento](#descripción-del-procesamiento)
 
+* [Desiciones de diseño](#desiciones-de-diseño)
+
 * [Diagramas](#diagramas)
 
   * [Diagramas estructurales](#diagramas-estructurales)
