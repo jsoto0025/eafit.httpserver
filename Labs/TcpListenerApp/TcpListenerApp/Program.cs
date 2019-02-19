@@ -12,7 +12,7 @@ class Program
         try
         {
             // Set the TcpListener on port 13000.
-            Int32 port = 13000;
+            Int32 port = 8085;
             IPAddress localAddr = IPAddress.Parse("127.0.0.1");
 
             // TcpListener server = new TcpListener(port);
@@ -40,7 +40,7 @@ class Program
                 // Get a stream object for reading and writing
                 NetworkStream stream = client.GetStream();
 
-                int i;
+                int i = 0;
 
                 // Loop to receive all the data sent by the client.
                 while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
@@ -57,6 +57,7 @@ class Program
                     // Send back a response.
                     stream.Write(msg, 0, msg.Length);
                     Console.WriteLine("Sent: {0}", data);
+
                 }
 
                 // Shutdown and end connection
