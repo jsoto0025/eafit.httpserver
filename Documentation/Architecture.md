@@ -36,7 +36,7 @@ http básico de prueba
 Se decidió crear tres componentes principales con responsabilidades específicas, uno que convertirá la información binaria en texto, otra para crear objetos con la información de la peticion 
 que luego sera enviada al pipeline para ser procesada por el cada uno de los procesadores configurados
 
-Una de desición de diseño fue emplear un mecanismo escalable que permitiera añadir capas de procesamiento a la petición, tales como realizar logging de las peticiones, autenticación o algún otro tipo de procesamiento
+El diseño fue enfocado para tener un mecanismo escalable que permitiera añadir capas de procesamiento a la petición, tales como realizar logging de las peticiones, autenticación o algún otro tipo de procesamiento
 
 ## Diagramas
 
