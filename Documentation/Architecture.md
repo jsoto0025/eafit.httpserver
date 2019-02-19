@@ -2,8 +2,9 @@
 
 # Contenido
 
-[Objetivo] (# Objetivo)
-[Diagramas estructurales](# Diagramas estructurales)
+[Objetivo](#objetivo)
+
+[Diagramas estructurales](#diagramas-estructurales)
 
 ## Objetivo
 Ejecutar actividades de diseño detallado de software mediante la implementación de un servidor
