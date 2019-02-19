@@ -1,5 +1,10 @@
 # Marcos y Patrones
 
+# Contenido
+
+[Objetivo] (# Objetivo)
+[Diagramas estructurales](# Diagramas estructurales)
+
 ## Objetivo
 Ejecutar actividades de diseño detallado de software mediante la implementación de un servidor
 http básico de prueba
@@ -30,5 +35,5 @@ http básico de prueba
 ### Diagramas de Comportamiento
 
 #### [Diagrama de actividades](https://drive.google.com/file/d/1sMBNNXBy4c5ZmWnw5LiROM3euaW3x4Zv/view?usp=sharing)
- ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-actividades-b.png)
+ ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-actividades.png)
 
