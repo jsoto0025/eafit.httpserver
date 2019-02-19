@@ -6,6 +6,8 @@
 
 * [Descripción del procesamiento](#descripción-del-procesamiento)
 
+* [Desiciones de diseño](#desiciones-de-diseño)
+
 * [Diagramas](#diagramas)
 
   * [Diagramas estructurales](#diagramas-estructurales)
@@ -31,6 +33,12 @@ http básico de prueba
 5. Creamos una respuesta con código 200
 5. Enviamos la respuesta al cliente
 
+## Desiciones de diseño
+
+Se decidió crear tres componentes principales con responsabilidades específicas, uno que convertirá la información binaria en texto, otra para crear objetos con la información de la peticion 
+que luego sera enviada al pipeline para ser procesada por el cada uno de los procesadores configurados
+
+El diseño fue enfocado para tener un mecanismo escalable que permitiera añadir capas de procesamiento a la petición, tales como realizar logging de las peticiones, autenticación o algún otro tipo de procesamiento
 
 ## Diagramas
 
