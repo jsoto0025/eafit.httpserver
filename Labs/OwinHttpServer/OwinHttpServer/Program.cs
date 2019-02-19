@@ -12,7 +12,7 @@ namespace OwinHttpServer
     {
         static void Main(string[] args)
         {
-            string urlServer = "http://localhost:8080";
+            string urlServer = "http://localhost:8085";
 
             using (WebApp.Start<Startup>(urlServer))
             {
