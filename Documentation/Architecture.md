@@ -2,10 +2,22 @@
 
 # Contenido
 
-[Objetivo](#objetivo)
+* [Objetivo](#objetivo)
 
-[Diagramas estructurales](#diagramas-estructurales)
+* [Descripción del procesamiento](#descripción-del-procesamiento)
 
+* [Diagramas](#diagramas)
+
+  * [Diagramas estructurales](#diagramas-estructurales)
+  
+    * [Diagrama de Componentes](#diagrama-de-componentes)
+    * [Diagrama de clases](#diagrama-de-clases)
+    * [Diagrama de despliegue](#diagrama-de-despliegue)
+  
+  * [Diagramas de Comportamiento](#diagramas-de-comportamiento)
+  
+    * [Diagrama de actividades](#diagrama-de-actividades)
+    
 ## Objetivo
 Ejecutar actividades de diseño detallado de software mediante la implementación de un servidor
 http básico de prueba
