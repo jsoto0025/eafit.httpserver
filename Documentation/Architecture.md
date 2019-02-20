@@ -47,18 +47,19 @@ El diseño fue enfocado para tener un mecanismo escalable que permitiera añadir
 #### [Diagrama de Componentes](https://drive.google.com/file/d/1f8nMRdii9rgghjJXw1yMWbSsWKuabmQg/view?usp=sharing)
  ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-componentes-diagram-b.png)
 
-#### Diagrama de clases
+#### [Diagrama de clases]
 
-# [Servidor](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
- ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-server.png)
+[Servidor](https://www.draw.io/?state=%7B%22ids%22:%5B%221vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf%22%5D,%22action%22:%22open%22,%22userId%22:%22105255346910046853963%22%7D#G1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf)
 
-# [ConnectionManager](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
+![Server](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-server.png)
+
+[ConnectionManager](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
 ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-connection-manager.png)
 
-# [RequestParser](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
+#### [RequestParser](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
 ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-clases-diagramB.png)
 
-# [Pipeline](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
+#### [Pipeline](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
 ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-ipeline.png)
 
 #### [Diagrama de despliegue](https://drive.google.com/file/d/1y0OHZs0uo-muBTQ1z-5_3zR6ZHKDHd_m/view?usp=sharing)
