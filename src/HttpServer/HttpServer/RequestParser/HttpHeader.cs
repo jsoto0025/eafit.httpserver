@@ -19,5 +19,13 @@ namespace HttpServer.RequestParser
             Key = key;
             Value = value;
         }
+
+        public string headerstring()
+        {
+            string cadena="";
+
+            return cadena=key.ToString()+ ": " + value.ToString() + " \r\n";
+        }
     }
 }
+.
