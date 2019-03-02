@@ -5,6 +5,9 @@ using System.Net.Sockets;
 
 namespace HTTPServer
 {
+    /// <summary>
+    /// Clase ppal del server
+    /// </summary>
     class WebServer
     {
         private TcpListener listener;
