@@ -26,7 +26,7 @@ namespace HttpServer.Processing
             ProcessorsCache = Processors.ToArray();
         }
 
-        internal void Run(IHttpRequest request)
+        public void Run(IHttpRequest request)
         {
             currentProcessorIndex = 0;
             CacheProcessorsArray();
@@ -62,7 +62,6 @@ namespace HttpServer.Processing
                 Protocol = request.Protocol,
             };
         }
-
         private void ProcessRequest(IHttpRequest request, int currentProcessorIndex)
         {
             var processor = ProcessorsCache[currentProcessorIndex];

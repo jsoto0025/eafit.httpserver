@@ -7,13 +7,13 @@ namespace HttpServer.Processing
 {
     public class LoggerProcessor : IProcessor
     {
-        public void ProcessRequest(IHttpRequest httpMessage, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
+        public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
             Console.WriteLine("Request at Logger");
-            next(httpMessage);
+            next(request);
         }
 
-        public void ProcessResponse(IHttpResponse httpMessage)
+        public void ProcessResponse(IHttpResponse response)
         {
             Console.WriteLine("Reponse at Logger");
 

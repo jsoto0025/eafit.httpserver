@@ -7,14 +7,14 @@ namespace HttpServer.Processing
 {
     public class ValidationProcessor : IProcessor
     {
-        public void ProcessRequest(IHttpRequest httpMessage, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
+        public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
             Console.WriteLine("Processor 1");
 
-            next(httpMessage);
+            next(request);
         }
 
-        public void ProcessResponse(IHttpResponse httpMessage)
+        public void ProcessResponse(IHttpResponse response)
         {
             Console.WriteLine("Reponse at processor 1");
 
