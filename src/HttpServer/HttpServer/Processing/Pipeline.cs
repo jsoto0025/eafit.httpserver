@@ -7,7 +7,7 @@ namespace HttpServer.Processing
 {
     public class Pipeline
     {
-        public List<IProcessor> Processors { get; set; }
+        private List<IProcessor> Processors { get; set; }
         private IProcessor[] ProcessorsCache { get; set; }
         private int currentProcessorIndex { get; set; }
 
@@ -16,12 +16,17 @@ namespace HttpServer.Processing
             Processors = new List<IProcessor>();
         }
 
+        public void AddProcessor(IProcessor processor)
+        {
+            Processors.Add(processor);
+        }
+
         private void CacheProcessorsArray()
         {
             ProcessorsCache = Processors.ToArray();
         }
 
-        internal void Start(IHttpMessage request)
+        internal void Run(IHttpRequest request)
         {
             currentProcessorIndex = 0;
             CacheProcessorsArray();
@@ -30,7 +35,7 @@ namespace HttpServer.Processing
             ProcessRequest(request, currentProcessorIndex: 0);
         }
 
-        private void GoToNextProcessor(IHttpMessage request)
+        private void GoToNextProcessor(IHttpRequest request)
         {
             currentProcessorIndex++;
 
@@ -40,19 +45,32 @@ namespace HttpServer.Processing
             }
             else
             {
+                var requestParser = new RequestParser.RequestParser();
+
+                var response = BuildResponse(request);
+
                 //TODO: Build response here
-                StopProcessing(request);
+                StopProcessing(response);
             }
         }
 
-        private void ProcessRequest(IHttpMessage request, int currentProcessorIndex)
+        private IHttpResponse BuildResponse(IHttpRequest request)
+        {
+            return new Response()
+            {
+                Method = request.Method,
+                Protocol = request.Protocol,
+            };
+        }
+
+        private void ProcessRequest(IHttpRequest request, int currentProcessorIndex)
         {
             var processor = ProcessorsCache[currentProcessorIndex];
 
             processor.ProcessRequest(request, GoToNextProcessor, StopProcessing);
         }
 
-        private void StopProcessing(IHttpMessage response)
+        private void StopProcessing(IHttpResponse response)
         {
             for (int i = ProcessorsCache.Length - 1; i >= 0; i--)
             {

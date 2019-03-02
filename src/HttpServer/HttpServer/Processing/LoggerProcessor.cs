@@ -5,18 +5,17 @@ using HttpServer.RequestParser;
 
 namespace HttpServer.Processing
 {
-    public class ValidationProcessor : IProcessor
+    public class LoggerProcessor : IProcessor
     {
         public void ProcessRequest(IHttpRequest httpMessage, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
-            Console.WriteLine("Processor 1");
-
+            Console.WriteLine("Request at Logger");
             next(httpMessage);
         }
 
         public void ProcessResponse(IHttpResponse httpMessage)
         {
-            Console.WriteLine("Reponse at processor 1");
+            Console.WriteLine("Reponse at Logger");
 
             // Litterally do nothing here
         }

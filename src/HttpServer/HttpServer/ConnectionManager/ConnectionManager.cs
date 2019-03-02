@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace HttpServer.ConnectionManager
+{
+    public class ConnectionManager
+    {
+        public string acceptConnection()
+        {
+            return "";
+        }
+    }
+}
