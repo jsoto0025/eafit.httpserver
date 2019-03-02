@@ -7,6 +7,9 @@ namespace HttpServer.RequestParser
     public enum Method
     {
         GET,
-        POST
+        POST,
+        HEAD,
+        PUT,
+        DELETE
     }
 }

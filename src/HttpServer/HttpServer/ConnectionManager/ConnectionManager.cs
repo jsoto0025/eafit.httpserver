@@ -6,7 +6,7 @@ namespace HttpServer.ConnectionManager
 {
     public class ConnectionManager
     {
-        public string acceptConnection()
+        public string AcceptConnection()
         {
             return "";
         }
