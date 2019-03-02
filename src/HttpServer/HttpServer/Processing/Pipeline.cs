@@ -49,7 +49,6 @@ namespace HttpServer.Processing
 
                 var response = BuildResponse(request);
 
-                //TODO: Build response here
                 StopProcessing(response);
             }
         }

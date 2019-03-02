@@ -6,6 +6,6 @@ namespace HttpServer.RequestParser
 {
     public enum Protocol
     {
-        Version1_1
+        Http
     }
 }
