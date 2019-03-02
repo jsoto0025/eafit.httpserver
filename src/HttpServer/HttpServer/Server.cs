@@ -8,14 +8,12 @@ namespace HttpServer
     {
         private readonly Pipeline _pipeline;
 
-        private Pipeline Pipeline => _pipeline;
-
         public Server()
         {
             _pipeline = new Pipeline();
 
-            _pipeline.Processors.Add(new ValidationProcessor());
-            _pipeline.Processors.Add(new ValidationProcessor2());
+            _pipeline.AddProcessor(new ValidationProcessor());
+            _pipeline.AddProcessor(new LoggerProcessor());
         }
 
 
@@ -23,7 +21,7 @@ namespace HttpServer
         {
             var request = new Request();
 
-            Pipeline.Start(request);
+            _pipeline.Run(request);
         }
 
     }
