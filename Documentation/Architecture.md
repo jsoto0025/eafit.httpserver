@@ -24,6 +24,9 @@
 Ejecutar actividades de diseño detallado de software mediante la implementación de un servidor
 http básico de prueba basado en el [RFC 2616](https://tools.ietf.org/html/rfc2616)
 
+## [Podcast](https://youtu.be/uAXitENOrKI)
+ ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast001.png)
+
 ## Descripción del procesamiento
 
 1. Primeramente se crea un socket en la combinación IP y puerto en la que escucharemos por peticiones
