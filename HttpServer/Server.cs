@@ -13,6 +13,9 @@ namespace HttpServer
         public Server()
         {
             _pipeline = new Pipeline();
+
+            _pipeline.Processors.Add(new ValidationProcessor());
+            _pipeline.Processors.Add(new ValidationProcessor2());
         }
 
 

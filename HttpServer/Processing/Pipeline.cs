@@ -11,6 +11,11 @@ namespace HttpServer.Processing
         private IProcessor[] ProcessorsCache { get; set; }
         private int currentProcessorIndex { get; set; }
 
+        public Pipeline()
+        {
+            Processors = new List<IProcessor>();
+        }
+
         private void CacheProcessorsArray()
         {
             ProcessorsCache = Processors.ToArray();
@@ -18,6 +23,9 @@ namespace HttpServer.Processing
 
         internal void Start(IHttpMessage request)
         {
+            currentProcessorIndex = 0;
+            CacheProcessorsArray();
+
             // We get the first processor to start the processing
             ProcessRequest(request, currentProcessorIndex: 0);
         }
@@ -46,7 +54,7 @@ namespace HttpServer.Processing
 
         private void StopProcessing(IHttpMessage response)
         {
-            for (int i = ProcessorsCache.Length; i >= 0; i--)
+            for (int i = ProcessorsCache.Length - 1; i >= 0; i--)
             {
                 ProcessorsCache[i].ProcessResponse(response);
             }
