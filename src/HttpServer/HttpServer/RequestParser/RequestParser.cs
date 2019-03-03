@@ -74,5 +74,28 @@ namespace HttpServer.RequestParser
                     return Method.GET;
             }
         }
+
+        public string Serialize(Response response)
+        {
+            //Arma la linea de Status compuesta por Protocolo/Version CodigoEstado DescripcionEstado
+            string statusLine = response.Protocol + "/" + response.Version + " " + response.CodigoEstado + " " + response.DescripcionEstado + "\r\n";
+
+            //Convierte a string los Headers
+            string stringHeader = "";
+            foreach (HttpHeader hdr in response.Headers)
+            {
+                stringHeader += hdr.Key + ": " + hdr.Value + "\r\n";
+             }
+            
+
+
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(statusLine);
+            stringBuilder.Append(stringHeader);
+            stringBuilder.Append("\r\n");
+            stringBuilder.Append(response.Body);
+
+            return stringBuilder.ToString();
+        }
     }
 }
