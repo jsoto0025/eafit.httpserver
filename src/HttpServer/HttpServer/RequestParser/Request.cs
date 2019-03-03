@@ -14,5 +14,11 @@ namespace HttpServer.RequestParser
         public string Version { get; set; }
         public string Body { get; set; }
         public List<HttpHeader> Headers { get; set; }
+        public string RawRequest { get; internal set; }
+
+        public Request()
+        {
+            Headers = new List<HttpHeader>();
+        }
     }
 }

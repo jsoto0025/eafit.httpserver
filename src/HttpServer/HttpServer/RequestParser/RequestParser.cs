@@ -41,6 +41,7 @@ namespace HttpServer.RequestParser
                 request.Headers.Add(new HttpHeader(headerSegments[0], headerSegments[1].Trim()));
             }
 
+            // Save body
             if (headersEndPosition > 0 && headersEndPosition < lines.Length)
             {
                 var stringBuilder = new StringBuilder();
@@ -52,6 +53,9 @@ namespace HttpServer.RequestParser
 
                 request.Body = stringBuilder.ToString();
             }
+
+            // Save raw request on request object
+            request.RawRequest = httpString;
 
             return request;
         }
@@ -75,7 +79,7 @@ namespace HttpServer.RequestParser
             }
         }
 
-        public string Serialize(Response response)
+        public string Serialize(IHttpResponse response)
         {
             var stringBuilder = new StringBuilder();
 

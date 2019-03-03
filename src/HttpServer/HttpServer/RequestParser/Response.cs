@@ -6,6 +6,11 @@ namespace HttpServer.RequestParser
 {
     public class Response : IHttpResponse
     {
+        public Response()
+        {
+            Headers = new List<HttpHeader>();
+        }
+
         public Protocol Protocol { get; set; }
         public string Body { get; set; }
         public List<HttpHeader> Headers { get; set; }

@@ -10,6 +10,7 @@ namespace HttpServer.Processing
         private List<IProcessor> Processors { get; set; }
         private IProcessor[] ProcessorsCache { get; set; }
         private int currentProcessorIndex { get; set; }
+        public IHttpResponse Response { get; private set; }
 
         public Pipeline()
         {
@@ -26,13 +27,15 @@ namespace HttpServer.Processing
             ProcessorsCache = Processors.ToArray();
         }
 
-        public void Run(IHttpRequest request)
+        public IHttpResponse Run(IHttpRequest request)
         {
             currentProcessorIndex = 0;
             CacheProcessorsArray();
 
             // We get the first processor to start the processing
             ProcessRequest(request, currentProcessorIndex: 0);
+
+            return Response;
         }
 
         private void GoToNextProcessor(IHttpRequest request)
@@ -45,19 +48,10 @@ namespace HttpServer.Processing
             }
             else
             {
-                var response = BuildResponse(request);
-
-                StopProcessing(response);
+                StopProcessing(new Response());
             }
         }
 
-        private IHttpResponse BuildResponse(IHttpRequest request)
-        {
-            return new Response()
-            {
-                Protocol = request.Protocol,
-            };
-        }
         private void ProcessRequest(IHttpRequest request, int currentProcessorIndex)
         {
             var processor = ProcessorsCache[currentProcessorIndex];
@@ -67,6 +61,8 @@ namespace HttpServer.Processing
 
         private void StopProcessing(IHttpResponse response)
         {
+            Response = response;
+
             for (int i = ProcessorsCache.Length - 1; i >= 0; i--)
             {
                 ProcessorsCache[i].ProcessResponse(response);
