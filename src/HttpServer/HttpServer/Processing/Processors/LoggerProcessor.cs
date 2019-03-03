@@ -12,6 +12,9 @@ namespace HttpServer.Processing.Processors
         {
             Console.WriteLine("Request at Logger");
 
+            // Log the request
+            File.AppendAllText(@"./RequestLog.txt", Newtonsoft.Json.JsonConvert.SerializeObject(request));
+
             next(request);
         }
 
