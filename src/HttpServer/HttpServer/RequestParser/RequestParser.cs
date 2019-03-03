@@ -77,22 +77,18 @@ namespace HttpServer.RequestParser
 
         public string Serialize(Response response)
         {
+            var stringBuilder = new StringBuilder();
+
             //Arma la linea de Status compuesta por Protocolo/Version CodigoEstado DescripcionEstado
-            string statusLine = response.Protocol + "/" + response.Version + " " + response.CodigoEstado + " " + response.DescripcionEstado + "\r\n";
+            stringBuilder.AppendLine(response.Protocol + "/" + response.Version + " " + response.StatusCode + " " + response.StatusDescription);
 
             //Convierte a string los Headers
-            string stringHeader = "";
-            foreach (HttpHeader hdr in response.Headers)
+            foreach (HttpHeader header in response.Headers)
             {
-                stringHeader += hdr.Key + ": " + hdr.Value + "\r\n";
-             }
-            
+                stringBuilder.AppendLine(header.Key + ": " + header.Value);
+            }
 
-
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append(statusLine);
-            stringBuilder.Append(stringHeader);
-            stringBuilder.Append("\r\n");
+            stringBuilder.AppendLine();
             stringBuilder.Append(response.Body);
 
             return stringBuilder.ToString();

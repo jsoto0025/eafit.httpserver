@@ -119,8 +119,8 @@ Content-Type: text/html
             var response = new Response();
             response.Protocol = Protocol.HTTP;
             response.Version = "1.1";
-            response.CodigoEstado = "200";
-            response.DescripcionEstado = "OK";
+            response.StatusCode = "200";
+            response.StatusDescription = "OK";
             var headers = new List<HttpHeader>();
             headers.Add(new HttpHeader("Date", "Sun, 03 Mar 2019 00:35:42 GMT"));
             headers.Add(new HttpHeader("Server", "Prueba"));

@@ -6,6 +6,7 @@ namespace HttpServer.RequestParser
 {
     public interface IHttpResponse : IHttpMessage
     {
-
+        string StatusCode { get; set; }
+        string StatusDescription { get; set; }
     }
 }

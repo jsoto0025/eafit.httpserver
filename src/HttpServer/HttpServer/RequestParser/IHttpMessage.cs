@@ -7,7 +7,6 @@ namespace HttpServer.RequestParser
     public interface IHttpMessage
     {
         Protocol Protocol { get; set; }
-        Method Method { get; set; }
         string Body { get; set; }
         List<HttpHeader> Headers { get; set; }
         string Version { get; set; }
