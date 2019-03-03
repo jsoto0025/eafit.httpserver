@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpServer", "HttpServer\Ht
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerLaucher", "ServerLaucher\ServerLaucher.csproj", "{906AC9FA-4F8C-46E9-B0CC-D13D24AD7248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpServer.XUnit.Test", "HttpServer.XUnit.Test\HttpServer.XUnit.Test.csproj", "{715BB64F-E886-436C-B248-0655EA907662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpServer.XUnit.Test", "HttpServer.XUnit.Test\HttpServer.XUnit.Test.csproj", "{715BB64F-E886-436C-B248-0655EA907662}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

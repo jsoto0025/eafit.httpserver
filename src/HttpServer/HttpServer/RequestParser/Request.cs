@@ -4,6 +4,9 @@ using System.Text;
 
 namespace HttpServer.RequestParser
 {
+    /// <summary>
+    /// Clase que representa una solicitud HTTP
+    /// </summary>
     public class Request : IHttpRequest
     {
         public Protocol Protocol { get; set; }

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace HttpServer.RequestParser
 {
+    /// <summary>
+    /// Clase que representa un encabezado HTTP
+    /// </summary>
     public class HttpHeader
     {
         public string Key { get; set; }

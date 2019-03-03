@@ -4,6 +4,9 @@ using System.Text;
 
 namespace HttpServer.RequestParser
 {
+    /// <summary>
+    /// Objeto de respuesta de HTTP
+    /// </summary>
     public class Response : IHttpResponse
     {
         public Response()

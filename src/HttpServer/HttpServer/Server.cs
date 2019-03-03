@@ -8,6 +8,9 @@ using System.Text;
 
 namespace HttpServer
 {
+    /// <summary>
+    /// Componente de servidor el cual contiene la ejecucón principal del servidor HTTP
+    /// </summary>
     public class Server
     {
         private const int MAX_SIZE = 1000;
@@ -16,6 +19,9 @@ namespace HttpServer
         private readonly Pipeline _pipeline;
         private readonly TcpListener _listener;
 
+        /// <summary>
+        /// Constructor que inicializa el listado de los procesadores del pipeline
+        /// </summary>
         public Server()
         {
             _pipeline = new Pipeline();
@@ -27,6 +33,9 @@ namespace HttpServer
         }
 
 
+        /// <summary>
+        /// Método que inicia la ejecucón del servidor
+        /// </summary>
         public void Start()
         {
 

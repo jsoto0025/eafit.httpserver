@@ -7,11 +7,13 @@ using HttpServer.RequestParser;
 
 namespace HttpServer.ConnectionManager
 {
-
+    /// <summary>
+    /// Conexión al cliente
+    /// </summary>
     public class ConnectionManager
     {
         private const int MAX_SIZE = 1000;
-        /// <summary>asi
+        /// <summary>
         /// Devuelve el string ASCII del request del client 
         /// </summary>
         /// <param name="client"></param>

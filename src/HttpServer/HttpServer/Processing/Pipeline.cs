@@ -19,6 +19,9 @@ namespace HttpServer.Processing
         private int currentProcessorIndex { get; set; }
         public IHttpResponse Response { get; private set; }
 
+        /// <summary>
+        /// Constructor que inicializa la lista de procesadores
+        /// </summary>
         public Pipeline()
         {
             Processors = new List<IProcessor>();
@@ -70,6 +73,11 @@ namespace HttpServer.Processing
             }
         }
 
+        /// <summary>
+        /// Ejecuta el procesador actual
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="currentProcessorIndex"></param>
         private void ProcessRequest(IHttpRequest request, int currentProcessorIndex)
         {
             var processor = ProcessorsCache[currentProcessorIndex];

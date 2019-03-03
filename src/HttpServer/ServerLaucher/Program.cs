@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace ServerLaucher
 {
+    /// <summary>
+    /// Aplicación del HTTP Server
+    /// </summary>
     class Program
     {
+
+        /// <summary>
+        /// Inicia la ejecución del servidor HTTP.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
 

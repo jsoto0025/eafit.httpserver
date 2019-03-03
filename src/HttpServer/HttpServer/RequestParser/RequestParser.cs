@@ -4,8 +4,18 @@ using System.Text;
 
 namespace HttpServer.RequestParser
 {
+
+    /// <summary>
+    /// Clase para conversión de los mensajes en diferentes formatos
+    /// </summary>
     public class RequestParser
     {
+
+        /// <summary>
+        /// Convierte in string en una objeto de solicitud
+        /// </summary>
+        /// <param name="httpString"></param>
+        /// <returns></returns>
         public IHttpRequest Parse(string httpString)
         {
             var lines = httpString.Split('\n');
@@ -60,6 +70,11 @@ namespace HttpServer.RequestParser
             return request;
         }
 
+        /// <summary>
+        /// Convirte un string que contienen el método en un enumerador del tipo método
+        /// </summary>
+        /// <param name="requestLine"></param>
+        /// <returns></returns>
         private Method ParseMethod(string requestLine)
         {
             switch (requestLine.ToUpper())
@@ -79,6 +94,11 @@ namespace HttpServer.RequestParser
             }
         }
 
+        /// <summary>
+        /// Convierte en string un objeto de respuesta de HTTP
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
         public string Serialize(IHttpResponse response)
         {
             var stringBuilder = new StringBuilder();
