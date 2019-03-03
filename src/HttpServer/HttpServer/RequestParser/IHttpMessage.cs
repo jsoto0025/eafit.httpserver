@@ -8,5 +8,8 @@ namespace HttpServer.RequestParser
     {
         Protocol Protocol { get; set; }
         Method Method { get; set; }
+        string Body { get; set; }
+        List<HttpHeader> Headers { get; set; }
+        string Version { get; set; }
     }
 }

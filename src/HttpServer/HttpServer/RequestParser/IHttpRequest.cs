@@ -6,6 +6,8 @@ namespace HttpServer.RequestParser
 {
     public interface IHttpRequest : IHttpMessage
     {
-
+        string Host { get; set; }
+        string Port { get; set; }
+        string Path { get; set; }
     }
 }

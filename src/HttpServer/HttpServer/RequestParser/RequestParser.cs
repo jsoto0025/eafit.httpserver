@@ -6,5 +6,9 @@ namespace HttpServer.RequestParser
 {
     public class RequestParser
     {
+        public IHttpRequest Parse(string httpString)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

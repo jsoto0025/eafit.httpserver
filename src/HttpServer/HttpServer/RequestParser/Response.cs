@@ -8,17 +8,8 @@ namespace HttpServer.RequestParser
     {
         public Protocol Protocol { get; set; }
         public Method Method { get; set; }
-
-        private string header;
-
-
-        private string version;
-       
-        private string body;
-
-        public string Version { get => version; set => version = "1.1"; }
-        
-        public string Body { get => body; set => body = value; }
-        public string Header { get => header; set => header = "Content-Type: text/html"; }
+        public string Body { get; set; }
+        public List<HttpHeader> Headers { get; set; }
+        public string Version { get; set; }
     }
 }
