@@ -74,5 +74,24 @@ namespace HttpServer.RequestParser
                     return Method.GET;
             }
         }
+
+        public string Serialize(Response response)
+        {
+            var stringBuilder = new StringBuilder();
+
+            //Arma la linea de Status compuesta por Protocolo/Version CodigoEstado DescripcionEstado
+            stringBuilder.AppendLine(response.Protocol + "/" + response.Version + " " + response.StatusCode + " " + response.StatusDescription);
+
+            //Convierte a string los Headers
+            foreach (HttpHeader header in response.Headers)
+            {
+                stringBuilder.AppendLine(header.Key + ": " + header.Value);
+            }
+
+            stringBuilder.AppendLine();
+            stringBuilder.Append(response.Body);
+
+            return stringBuilder.ToString();
+        }
     }
 }

@@ -103,12 +103,39 @@ Cookie: 1P_JAR=2019-03-03-14; NID=162=QiXh8uhwzXBbOMtFsNpBE1V-iofreZh6kmMyCEDWmR
 
             request.Headers.Should().BeEquivalentTo(headers);
         }
+    
+
+
+        [Fact]
+        public void GetResponseSerializationTest()
+        {
+            var httpString = @"HTTP/1.1 200 OK
+Date: Sun, 03 Mar 2019 00:35:42 GMT
+Server: Prueba
+Content-Type: text/html
+
+<h1>200 OK </h1>";
+
+            var response = new Response();
+            response.Protocol = Protocol.HTTP;
+            response.Version = "1.1";
+            response.StatusCode = "200";
+            response.StatusDescription = "OK";
+            var headers = new List<HttpHeader>();
+            headers.Add(new HttpHeader("Date", "Sun, 03 Mar 2019 00:35:42 GMT"));
+            headers.Add(new HttpHeader("Server", "Prueba"));
+            headers.Add(new HttpHeader("Content-Type", "text/html"));
+
+            response.Headers = headers;
+            response.Body = "<h1>200 OK </h1>";
+
+            var parser = new HttpServer.RequestParser.RequestParser();
+
+            var request = parser.Serialize(response);
+
+            Assert.NotNull(request);
+            Assert.Equal(request.ToString(), httpString); //Validar que el string que devuelve serializable se igual al de la prueba
+      
+        }
     }
-
-
-    /*
-     * {
-   "Name": "Test"
-
-     */
 }

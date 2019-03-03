@@ -45,8 +45,6 @@ namespace HttpServer.Processing
             }
             else
             {
-                var requestParser = new RequestParser.RequestParser();
-
                 var response = BuildResponse(request);
 
                 StopProcessing(response);
@@ -57,7 +55,6 @@ namespace HttpServer.Processing
         {
             return new Response()
             {
-                Method = request.Method,
                 Protocol = request.Protocol,
             };
         }

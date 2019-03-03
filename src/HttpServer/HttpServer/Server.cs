@@ -22,6 +22,10 @@ namespace HttpServer
         {
             var request = new Request();
 
+            var rawRequest = "";
+
+            
+
             _pipeline.Run(request);
         }
 
