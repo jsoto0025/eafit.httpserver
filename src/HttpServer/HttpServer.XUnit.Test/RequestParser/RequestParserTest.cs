@@ -31,20 +31,21 @@ Accept-Language: es,en-US;q=0.9,en;q=0.8
             Assert.NotNull(request);
             Assert.Equal(Method.GET, request.Method);
             Assert.Equal("http://www.google.com/", request.Host);
-            Assert.Equal( "1.1", request.Version);
-            Assert.Equal( Protocol.HTTP, request.Protocol);
+            Assert.Equal("1.1", request.Version);
+            Assert.Equal(Protocol.HTTP, request.Protocol);
             Assert.Null(request.Body);
-          
 
-            var headers = new List<HttpHeader>();
-            headers.Add(new HttpHeader("Host", "www.google.com"));
-            headers.Add(new HttpHeader("Connection", "keep-alive"));
-            headers.Add(new HttpHeader("Cache-Control", "no-cache"));
-            headers.Add(new HttpHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"));
-            headers.Add(new HttpHeader("Postman-Token", "61619fa3-45e0-0bf6-6662-8b5aa9765426"));
-            headers.Add(new HttpHeader("Accept", "*/*"));
-            headers.Add(new HttpHeader("Accept-Encoding", "gzip, deflate"));
-            headers.Add(new HttpHeader("Accept-Language", "es,en-US;q=0.9,en;q=0.8"));
+            var headers = new List<HttpHeader>()
+            {
+                new HttpHeader("Host", "www.google.com"),
+                new HttpHeader("Connection", "keep-alive"),
+                new HttpHeader("Cache-Control", "no-cache"),
+                new HttpHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"),
+                new HttpHeader("Postman-Token", "61619fa3-45e0-0bf6-6662-8b5aa9765426"),
+                new HttpHeader("Accept", "*/*"),
+                new HttpHeader("Accept-Encoding", "gzip, deflate"),
+                new HttpHeader("Accept-Language", "es,en-US;q=0.9,en;q=0.8")
+            };
 
             request.Headers.Should().BeEquivalentTo(headers);
         }
@@ -103,7 +104,7 @@ Cookie: 1P_JAR=2019-03-03-14; NID=162=QiXh8uhwzXBbOMtFsNpBE1V-iofreZh6kmMyCEDWmR
 
             request.Headers.Should().BeEquivalentTo(headers);
         }
-    
+
 
 
         [Fact]
@@ -135,7 +136,7 @@ Content-Type: text/html
 
             Assert.NotNull(request);
             Assert.Equal(request.ToString(), httpString); //Validar que el string que devuelve serializable se igual al de la prueba
-      
+
         }
     }
 }
