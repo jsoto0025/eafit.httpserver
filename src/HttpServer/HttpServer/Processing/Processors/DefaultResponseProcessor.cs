@@ -22,10 +22,13 @@ namespace HttpServer.Processing.Processors
             response.Version = "1.1";
             response.StatusCode = "200";
             response.StatusDescription = "OK";
-            var headers = new List<HttpHeader>();
-            headers.Add(new HttpHeader("Date", DateTime.UtcNow.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffff")));
-            headers.Add(new HttpHeader("Server", Environment.MachineName));
-            headers.Add(new HttpHeader("Content-Type", "text/html"));
+
+            var headers = new List<HttpHeader>()
+            {
+                new HttpHeader("Date", DateTime.UtcNow.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffff")),
+                new HttpHeader("Server", Environment.MachineName),
+                new HttpHeader("Content-Type", "text/html")
+            };
 
             response.Headers = headers;
             response.Body = "<h1>200 OK </h1>";
