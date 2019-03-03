@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using HttpServer.RequestParser;
 
-namespace HttpServer.Processing
+namespace HttpServer.Processing.Processors
 {
-    public class LoggerProcessor : IProcessor
+    public class ValidationProcessor : IProcessor
     {
         public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
-            Console.WriteLine("Request at Logger");
+            Console.WriteLine("Processor 1");
+
             next(request);
         }
 
         public void ProcessResponse(IHttpResponse response)
         {
-            Console.WriteLine("Reponse at Logger");
+            Console.WriteLine("Reponse at processor 1");
 
             // Litterally do nothing here
         }
