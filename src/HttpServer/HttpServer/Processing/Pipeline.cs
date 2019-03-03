@@ -7,8 +7,15 @@ namespace HttpServer.Processing
 {
     public class Pipeline
     {
+        /// <summary>
+        /// Lista de procesadores disponibles
+        /// </summary>
         private List<IProcessor> Processors { get; set; }
+
         private IProcessor[] ProcessorsCache { get; set; }
+        /// <summary>
+        /// Inidice del procesador actual
+        /// </summary>
         private int currentProcessorIndex { get; set; }
         public IHttpResponse Response { get; private set; }
 
@@ -22,22 +29,33 @@ namespace HttpServer.Processing
             Processors.Add(processor);
         }
 
+        /// <summary>
+        /// Combierte el List de Procesadores en Array
+        /// </summary>
         private void CacheProcessorsArray()
         {
             ProcessorsCache = Processors.ToArray();
         }
 
+        /// <summary>
+        /// Ejecuta la lista de procesadores
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>Devuelve el obejto Response que se retorna como respuesta al cliente.</returns>
         public IHttpResponse Run(IHttpRequest request)
         {
             currentProcessorIndex = 0;
             CacheProcessorsArray();
-
-            // We get the first processor to start the processing
+            
             ProcessRequest(request, currentProcessorIndex: 0);
 
             return Response;
         }
 
+        /// <summary>
+        /// Activa el siquiente procesador a ser ejecutado
+        /// </summary>
+        /// <param name="request"></param>
         private void GoToNextProcessor(IHttpRequest request)
         {
             currentProcessorIndex++;
@@ -59,6 +77,10 @@ namespace HttpServer.Processing
             processor.ProcessRequest(request, GoToNextProcessor, StopProcessing);
         }
 
+        /// <summary>
+        /// Detiene la ejecucón del pipeline
+        /// </summary>
+        /// <param name="response"></param>
         private void StopProcessing(IHttpResponse response)
         {
             Response = response;

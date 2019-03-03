@@ -7,10 +7,15 @@ using HttpServer.RequestParser;
 
 namespace HttpServer.ConnectionManager
 {
+
     public class ConnectionManager
     {
         private const int MAX_SIZE = 1000;
-
+        /// <summary>asi
+        /// Devuelve el string ASCII del request del client 
+        /// </summary>
+        /// <param name="client"></param>
+        /// <returns></returns>
         internal string ObtainRequestString(TcpClient client)
         {
             var result = new Byte[MAX_SIZE];
@@ -19,6 +24,11 @@ namespace HttpServer.ConnectionManager
             return Encoding.ASCII.GetString(result, 0, size);
         }
 
+        /// <summary>
+        /// Envia el stream de retorno al cliente que incio la solicitud inicial
+        /// </summary>
+        /// <param name="client">Cliente Tcp que contiene la información del cliente que realiza la peticicón</param>
+        /// <param name="rawResponse">String con el mensaje que se envia de respuesta al cliente</param>
         internal void SendResponse(TcpClient client, string rawResponse)
         {
             var stream = client.GetStream();
