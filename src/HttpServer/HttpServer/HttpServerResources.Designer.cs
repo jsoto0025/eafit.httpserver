@@ -160,7 +160,7 @@ namespace HttpServer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ./RequestLog.txt.
+        ///   Looks up a localized string similar to ./RequestLog.json.
         /// </summary>
         internal static string LoggerFileName {
             get {
@@ -183,6 +183,42 @@ namespace HttpServer {
         internal static string LoggerProcessResponseStatus {
             get {
                 return ResourceManager.GetString("LoggerProcessResponseStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conexión cerrada.
+        /// </summary>
+        internal static string ServerStatusMessageClose {
+            get {
+                return ResourceManager.GetString("ServerStatusMessageClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --------------------------------.
+        /// </summary>
+        internal static string ServerStatusMessageLines {
+            get {
+                return ResourceManager.GetString("ServerStatusMessageLines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conexión recibida.
+        /// </summary>
+        internal static string ServerStatusMessageRecibe {
+            get {
+                return ResourceManager.GetString("ServerStatusMessageRecibe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eperando conexiones.......
+        /// </summary>
+        internal static string ServerStatusMessageWait {
+            get {
+                return ResourceManager.GetString("ServerStatusMessageWait", resourceCulture);
             }
         }
         

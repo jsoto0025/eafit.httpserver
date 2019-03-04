@@ -151,13 +151,25 @@
     <value>1.1</value>
   </data>
   <data name="LoggerFileName" xml:space="preserve">
-    <value>./RequestLog.txt</value>
+    <value>./RequestLog.json</value>
   </data>
   <data name="LoggerProcessRequestStatus" xml:space="preserve">
     <value>Solicitud en el logger</value>
   </data>
   <data name="LoggerProcessResponseStatus" xml:space="preserve">
     <value>Respuesta en el logger</value>
+  </data>
+  <data name="ServerStatusMessageClose" xml:space="preserve">
+    <value>Conexión cerrada</value>
+  </data>
+  <data name="ServerStatusMessageLines" xml:space="preserve">
+    <value>--------------------------------</value>
+  </data>
+  <data name="ServerStatusMessageRecibe" xml:space="preserve">
+    <value>Conexión recibida</value>
+  </data>
+  <data name="ServerStatusMessageWait" xml:space="preserve">
+    <value>Eperando conexiones......</value>
   </data>
   <data name="StatusCode200" xml:space="preserve">
     <value>200</value>

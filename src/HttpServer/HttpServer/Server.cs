@@ -45,13 +45,13 @@ namespace HttpServer
 
                 while (true)
                 {
-                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine( HttpServerResources.ServerStatusMessageLines );
 
-                    Console.WriteLine("\r\nWating for connections......");
+                    Console.WriteLine(HttpServerResources.ServerStatusMessageWait);
 
                     var client = _listener.AcceptTcpClient();
 
-                    Console.WriteLine("\r\nConnection received");
+                    Console.WriteLine(HttpServerResources.ServerStatusMessageRecibe);
                     Console.WriteLine();
 
                     var connectionManager = new ConnectionManager.ConnectionManager();
@@ -72,7 +72,7 @@ namespace HttpServer
 
                     client.Close();
 
-                    Console.WriteLine("\r\nConnection close");
+                    Console.WriteLine(HttpServerResources.ServerStatusMessageClose);
                 }
             }
             finally

@@ -16,7 +16,7 @@ namespace HttpServer.MSTest.Test.RequestParser
         [TestMethod]
         public void DebeRetornarUnObjetoHttpRequestAlRecibirUnStringTest()
         {
-
+            
             //Arrange
             var httpString = @"GET http://www.google.com/ HTTP/1.1
 Host: www.google.com
