@@ -76,3 +76,4 @@ El diseño fue enfocado para tener un mecanismo escalable que permitiera añadir
 #### [Diagrama de actividades](https://drive.google.com/file/d/1sMBNNXBy4c5ZmWnw5LiROM3euaW3x4Zv/view?usp=sharing)
  ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-actividadesB.png)
 
+### [Forma de uso](https://github.com/jsoto0025/eafit.httpserver/blob/master/Documentation/FormaDeUso.md) 
