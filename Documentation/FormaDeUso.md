@@ -18,3 +18,8 @@ ServerLauncher.exe
 
 Desde el navegador de preferencia escribir la siguiente url: http://localhost:8080/
 
+### Ejecución de las pruebas unitarias
+
+Desde la venta de test explorer en Visual Studio, dar clic en el botón de ejecutar todas las pruebas.
+
+ ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/testExecution.PNG)
