@@ -14,5 +14,7 @@ Ejecutar el comando:
 
 ServerLauncher.exe
 
+ ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/cmdExecution.PNG)
+
 Desde el navegador de preferencia escribir la siguiente url: http://localhost:8080/
 
