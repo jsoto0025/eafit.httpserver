@@ -10,8 +10,10 @@ namespace HttpServer.XUnit.Test.RequestParser
     public class RequestParserTest
     {
         [Fact]
-        public void GetRequestParsingsTest()
+        public void DebeRetornarUnObjetoHttpRequestAlRecibirUnStringTest()
         {
+
+            //Arrange
             var httpString = @"GET http://www.google.com/ HTTP/1.1
 Host: www.google.com
 Connection: keep-alive
@@ -22,18 +24,6 @@ Accept: */*
 Accept-Encoding: gzip, deflate
 Accept-Language: es,en-US;q=0.9,en;q=0.8
 ";
-
-
-            var parser = new HttpServer.RequestParser.RequestParser();
-
-            var request = parser.Parse(httpString);
-
-            Assert.NotNull(request);
-            Assert.Equal(Method.GET, request.Method);
-            Assert.Equal("http://www.google.com/", request.Host);
-            Assert.Equal("1.1", request.Version);
-            Assert.Equal(Protocol.HTTP, request.Protocol);
-            Assert.Null(request.Body);
 
             var headers = new List<HttpHeader>()
             {
@@ -47,12 +37,30 @@ Accept-Language: es,en-US;q=0.9,en;q=0.8
                 new HttpHeader("Accept-Language", "es,en-US;q=0.9,en;q=0.8")
             };
 
+            //Act
+
+            var parser = new HttpServer.RequestParser.RequestParser();
+
+            var request = parser.Parse(httpString);
+
+            //Assert
+
+            Assert.NotNull(request);
+            Assert.Equal(Method.GET, request.Method);
+            Assert.Equal("http://www.google.com/", request.Host);
+            Assert.Equal("1.1", request.Version);
+            Assert.Equal(Protocol.HTTP, request.Protocol);
+            Assert.Null(request.Body);
+            
             request.Headers.Should().BeEquivalentTo(headers);
         }
 
         [Fact]
-        public void PostRequestParsingsTest()
+        public void DebeGenerarUnObjetoHttpResponseDeUnStringTest()
         {
+
+            //Arrange
+
             var httpString = @"POST http://www.google.com/ HTTP/1.1
 Host: www.google.com
 Connection: keep-alive
@@ -75,19 +83,6 @@ Cookie: 1P_JAR=2019-03-03-14; NID=162=QiXh8uhwzXBbOMtFsNpBE1V-iofreZh6kmMyCEDWmR
    "\"Name\": \"Test\"" +
 "}";
 
-
-            var parser = new HttpServer.RequestParser.RequestParser();
-
-            var request = parser.Parse(httpString);
-
-            Assert.NotNull(request);
-            Assert.Equal(Method.POST, request.Method);
-            Assert.Equal("http://www.google.com/", request.Host);
-            Assert.Equal("1.1", request.Version);
-            Assert.Equal(Protocol.HTTP, request.Protocol);
-            Assert.Equal(request.Body, expectedBody);
-
-
             var headers = new List<HttpHeader>();
             headers.Add(new HttpHeader("Host", "www.google.com"));
             headers.Add(new HttpHeader("Connection", "keep-alive"));
@@ -102,14 +97,28 @@ Cookie: 1P_JAR=2019-03-03-14; NID=162=QiXh8uhwzXBbOMtFsNpBE1V-iofreZh6kmMyCEDWmR
             headers.Add(new HttpHeader("Accept-Language", "es,en-US;q=0.9,en;q=0.8"));
             headers.Add(new HttpHeader("Cookie", "1P_JAR=2019-03-03-14; NID=162=QiXh8uhwzXBbOMtFsNpBE1V-iofreZh6kmMyCEDWmR5u2rm-oT2_0spQAvRZeAJjEPsQeJbmj3q6aGvJTnTUIpCBbivmM89P9rvQdCTfK6gypyAZ_Wfykxt6P3Gkfnh3W3yxKl0KdEE-qgg5OAThlibN__RI6ZLbZOcajmgrr1Y"));
 
+            //Act
+            var parser = new HttpServer.RequestParser.RequestParser();
+
+            var request = parser.Parse(httpString);
+
+            //Assert
+            Assert.NotNull(request);
+            Assert.Equal(Method.POST, request.Method);
+            Assert.Equal("http://www.google.com/", request.Host);
+            Assert.Equal("1.1", request.Version);
+            Assert.Equal(Protocol.HTTP, request.Protocol);
+            Assert.Equal(request.Body, expectedBody);
+            
             request.Headers.Should().BeEquivalentTo(headers);
         }
 
 
 
         [Fact]
-        public void GetResponseSerializationTest()
+        public void DebeGenerarUnObjetoHttpResponseDesdeUnStringTest()
         {
+            //Arrange
             var httpString = @"HTTP/1.1 200 OK
 Date: Sun, 03 Mar 2019 00:35:42 GMT
 Server: Prueba
@@ -130,10 +139,11 @@ Content-Type: text/html
             response.Headers = headers;
             response.Body = "<h1>200 OK </h1>";
 
+            //Act
             var parser = new HttpServer.RequestParser.RequestParser();
-
             var request = parser.Serialize(response);
 
+            //Assert
             Assert.NotNull(request);
             Assert.Equal(request.ToString(), httpString); //Validar que el string que devuelve serializable se igual al de la prueba
 
