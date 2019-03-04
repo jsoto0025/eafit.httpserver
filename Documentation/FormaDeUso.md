@@ -1,13 +1,13 @@
-#Servidor HTTP
+# Servidor HTTP
 
-##Documentación
+## Documentación
 
-###Requisitos del sistema
+### Requisitos del sistema
 
 Windows 7 ó posterior
 .Net Framework 4.5 o posterior
 
-###Forma de ejecución
+### Forma de ejecución
 
 Abrir una ventana de CMD
 Ejecutar el comando:
