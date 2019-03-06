@@ -68,6 +68,9 @@ El diseño fue enfocado para tener un mecanismo escalable que permitiera añadir
 
 ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-ipeline.png)
 
+[Diagrama general](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
+![Request parser](https://github.com/jsoto0025/eafit.httpserver/blob/master/Documentation/images/uml-diagramas-general.png)
+
 #### [Diagrama de despliegue](https://drive.google.com/file/d/1y0OHZs0uo-muBTQ1z-5_3zR6ZHKDHd_m/view?usp=sharing)
  ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-diagrama-despliegueC.png)
 
