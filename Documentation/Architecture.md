@@ -24,7 +24,10 @@
 Ejecutar actividades de diseño detallado de software mediante la implementación de un servidor
 http básico de prueba basado en el [RFC 2616](https://tools.ietf.org/html/rfc2616)
 
-## [Podcast](https://youtu.be/uAXitENOrKI)
+## [Podcast - decisiones de arquitectura](https://youtu.be/R6HdAe7WgFg)
+ ![image.jpg](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast002.JPG)
+
+## [Podcast - discusión inicial](https://youtu.be/uAXitENOrKI)
  ![image.jpg](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast001.JPG)
 
 ## Descripción del procesamiento
