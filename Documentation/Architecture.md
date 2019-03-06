@@ -62,7 +62,7 @@ El diseño fue enfocado para tener un mecanismo escalable que permitiera añadir
 
 [RequestParser](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
 
-![Request parser](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-clases-diagramB.png)
+![Request parser](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/uml-clases-diagram-request-parser.png)
 
 [Pipeline](https://drive.google.com/file/d/1vFhEw-44pBMuWKQeXJMHlMY-JCUOKLbf/view?usp=sharing)
 
