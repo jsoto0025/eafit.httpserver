@@ -20,8 +20,8 @@ namespace HttpServer.Processing.Processors
         public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
             Console.WriteLine(HttpServerResources.LoggerProcessRequestStatus);
-            
-            File.AppendAllText(HttpServerResources.LoggerFileName, Newtonsoft.Json.JsonConvert.SerializeObject(request) + HttpServerResources.EOLChars);
+
+            File.AppendAllText(HttpServerResources.LoggerFileName, request.RawRequest + "\r\n");
 
             next(request);
         }

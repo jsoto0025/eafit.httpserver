@@ -123,9 +123,6 @@
   <data name="DefaultProcessResponseStatus" xml:space="preserve">
     <value>Respuesta del procesador por defecto</value>
   </data>
-  <data name="EOLChars" xml:space="preserve">
-    <value>\r\n</value>
-  </data>
   <data name="HeaderContentType" xml:space="preserve">
     <value>Content-Type</value>
   </data>
@@ -151,7 +148,7 @@
     <value>1.1</value>
   </data>
   <data name="LoggerFileName" xml:space="preserve">
-    <value>./RequestLog.json</value>
+    <value>./RequestLog.txt</value>
   </data>
   <data name="LoggerProcessRequestStatus" xml:space="preserve">
     <value>Solicitud en el logger</value>
