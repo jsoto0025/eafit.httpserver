@@ -37,7 +37,7 @@ namespace HttpServer.Processing.Processors
             headers.Add(new HttpHeader(HttpServerResources.HeaderContentType, HttpServerResources.HeaderContentTypeHtml));
 
             response.Headers = headers;
-            response.Body = HttpServerResources.HtmlH1 + HttpServerResources.StatusCode200 +  HttpServerResources.HtmlH1Closed;
+            response.Body = HttpServerResources.HtmlH1 + HttpServerResources.StatusCode200 + HttpServerResources.HtmlH1Closed;
         }
     }
 }

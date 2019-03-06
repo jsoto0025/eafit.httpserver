@@ -26,8 +26,8 @@ namespace HttpServer
         {
             _pipeline = new Pipeline();
 
-            _pipeline.AddProcessor(new DefaultResponseProcessor());
             _pipeline.AddProcessor(new LoggerProcessor());
+            _pipeline.AddProcessor(new DefaultResponseProcessor());
 
             _listener = new TcpListener(IPAddress.Any, PORT);
         }
@@ -45,7 +45,7 @@ namespace HttpServer
 
                 while (true)
                 {
-                    Console.WriteLine( HttpServerResources.ServerStatusMessageLines );
+                    Console.WriteLine(HttpServerResources.ServerStatusMessageLines);
 
                     Console.WriteLine(HttpServerResources.ServerStatusMessageWait);
 
