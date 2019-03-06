@@ -79,15 +79,6 @@ namespace HttpServer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \r\n.
-        /// </summary>
-        internal static string EOLChars {
-            get {
-                return ResourceManager.GetString("EOLChars", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Content-Type.
         /// </summary>
         internal static string HeaderContentType {
@@ -160,7 +151,7 @@ namespace HttpServer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ./RequestLog.json.
+        ///   Looks up a localized string similar to ./RequestLog.txt.
         /// </summary>
         internal static string LoggerFileName {
             get {
