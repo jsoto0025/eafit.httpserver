@@ -11,9 +11,11 @@ namespace HttpServer.Processing.Processors
     {
         public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
-            if (!request.Method.HasValue || request.Method == Method.HEAD)
+            Console.WriteLine(HttpServerResources.ValidationProcessorTrackingMessage);
+
+            if (!request.Method.HasValue)
             {
-                stopProcessing(new Response());
+                stopProcessing(BuildErrorResponse());
             }
             else
             {
@@ -24,6 +26,11 @@ namespace HttpServer.Processing.Processors
         public void ProcessResponse(IHttpResponse response)
         {
             Console.WriteLine(HttpServerResources.ValidationProcessorTrackingMessage);
+        }
+
+        private IHttpResponse BuildErrorResponse()
+        {
+            var response = new Response();
 
             response.Protocol = Protocol.HTTP;
             response.Version = HttpServerResources.HttpVersion;
@@ -37,6 +44,8 @@ namespace HttpServer.Processing.Processors
 
             response.Headers = headers;
             response.Body = HttpServerResources.ValidationProcessorResponseBody;
+
+            return response;
         }
     }
 }

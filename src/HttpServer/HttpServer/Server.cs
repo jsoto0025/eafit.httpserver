@@ -60,9 +60,7 @@ namespace HttpServer
 
                         var pipeline = new Pipeline();
 
-                        pipeline.AddProcessor(new ValidationProcessor());
-                        pipeline.AddProcessor(new LoggerProcessor());
-                        pipeline.AddProcessor(new DefaultResponseProcessor());
+                        ConfigurePipelineProcessors(pipeline);
 
                         var response = pipeline.Run(request);
                         var rawResponse = parser.Serialize(response);
@@ -79,6 +77,13 @@ namespace HttpServer
             {
                 _listener.Stop();
             }
+        }
+
+        private void ConfigurePipelineProcessors(Pipeline pipeline)
+        {
+            pipeline.AddProcessor(new ValidationProcessor());
+            pipeline.AddProcessor(new LoggerProcessor());
+            pipeline.AddProcessor(new DefaultResponseProcessor());
         }
 
         public void Stop()

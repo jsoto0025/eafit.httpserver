@@ -13,6 +13,9 @@ namespace HttpServer.RequestParser
         POST,
         HEAD,
         PUT,
-        DELETE
+        DELETE,
+        CONNECT,
+        OPTIONS,
+        TRACE
     }
 }

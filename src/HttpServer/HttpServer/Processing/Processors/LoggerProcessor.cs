@@ -21,7 +21,7 @@ namespace HttpServer.Processing.Processors
         {
             Console.WriteLine(HttpServerResources.LoggerProcessRequestStatus);
 
-            File.AppendAllText(HttpServerResources.LoggerFileName, request.RawRequest + "\r\n");
+            File.AppendAllText(HttpServerResources.LoggerFileName, Newtonsoft.Json.JsonConvert.SerializeObject(request) + "\r\n");
 
             next(request);
         }

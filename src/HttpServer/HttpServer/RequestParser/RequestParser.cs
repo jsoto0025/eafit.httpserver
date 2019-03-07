@@ -89,6 +89,12 @@ namespace HttpServer.RequestParser
                     return Method.PUT;
                 case "DELETE":
                     return Method.DELETE;
+                case "CONNECT":
+                    return Method.CONNECT;
+                case "OPTIONS":
+                    return Method.OPTIONS;
+                case "TRACE":
+                    return Method.TRACE;
                 default:
                     return null;
             }
