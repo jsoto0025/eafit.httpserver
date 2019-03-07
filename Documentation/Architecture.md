@@ -25,7 +25,9 @@ Ejecutar actividades de diseño detallado de software mediante la implementació
 http básico de prueba basado en el [RFC 2616](https://tools.ietf.org/html/rfc2616)
 
 ## [Podcast - decisiones de arquitectura](https://youtu.be/R6HdAe7WgFg)
- ![image.jpg](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast002.JPG)
+ ![image.png](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast002.PNG)
+
+
 
 ## [Podcast - discusión inicial](https://youtu.be/uAXitENOrKI)
  ![image.jpg](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast001.JPG)
