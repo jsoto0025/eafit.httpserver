@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using HttpServer.RequestParser;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace HttpServer.Processing.Processors
 {
@@ -19,9 +21,21 @@ namespace HttpServer.Processing.Processors
         /// <param name="stopProcessing"></param>
         public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Converters.Add(new StringEnumConverter());
+            serializer.Formatting = Formatting.Indented;
+
+            using (StreamWriter sw = new StreamWriter(HttpServerResources.LoggerFileName, append: true))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, request);
+                sw.WriteLine();
+                sw.WriteLine();
+            }
+
             Console.WriteLine(HttpServerResources.LoggerProcessRequestStatus);
 
-            File.AppendAllText(HttpServerResources.LoggerFileName, Newtonsoft.Json.JsonConvert.SerializeObject(request) + "\r\n");
+            //File.AppendAllText(HttpServerResources.LoggerFileName, Newtonsoft.Json.JsonConvert.SerializeObject(request) + "\r\n");
 
             next(request);
         }

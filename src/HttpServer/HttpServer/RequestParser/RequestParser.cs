@@ -64,9 +64,6 @@ namespace HttpServer.RequestParser
                 request.Body = stringBuilder.ToString();
             }
 
-            // Save raw request on request object
-            request.RawRequest = httpString;
-
             return request;
         }
 

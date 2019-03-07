@@ -106,7 +106,7 @@ namespace HttpServer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to yyyy-MM-ddTHH\\:mm\\:ss.fffffff.
+        ///   Looks up a localized string similar to yyyy-MM-ddTHH\:mm\:ss.fffffff.
         /// </summary>
         internal static string HeaderGeneralDateFormat {
             get {

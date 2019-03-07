@@ -13,6 +13,5 @@ namespace HttpServer.RequestParser
         string Host { get; set; }
         string Port { get; set; }
         string Path { get; set; }
-        string RawRequest { get; set; }
     }
 }

@@ -133,7 +133,7 @@
     <value>text/html</value>
   </data>
   <data name="HeaderGeneralDateFormat" xml:space="preserve">
-    <value>yyyy-MM-ddTHH\\:mm\\:ss.fffffff</value>
+    <value>yyyy-MM-ddTHH\:mm\:ss.fffffff</value>
   </data>
   <data name="HeaderGeneralDateName" xml:space="preserve">
     <value>Date</value>
