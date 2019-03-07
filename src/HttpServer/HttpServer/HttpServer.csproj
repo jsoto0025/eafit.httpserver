@@ -54,6 +54,7 @@
     <Compile Include="Processing\Pipeline.cs" />
     <Compile Include="Processing\Processors\DefaultResponseProcessor.cs" />
     <Compile Include="Processing\Processors\LoggerProcessor.cs" />
+    <Compile Include="Processing\Processors\ValidationProcessor.cs" />
     <Compile Include="RequestParser\HttpHeader.cs" />
     <Compile Include="RequestParser\IHttpMessage.cs" />
     <Compile Include="RequestParser\IHttpRequest.cs" />

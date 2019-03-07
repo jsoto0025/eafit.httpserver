@@ -75,7 +75,7 @@ namespace HttpServer.RequestParser
         /// </summary>
         /// <param name="requestLine"></param>
         /// <returns></returns>
-        private Method ParseMethod(string requestLine)
+        private Method? ParseMethod(string requestLine)
         {
             switch (requestLine.ToUpper())
             {
@@ -90,7 +90,7 @@ namespace HttpServer.RequestParser
                 case "DELETE":
                     return Method.DELETE;
                 default:
-                    return Method.GET;
+                    return null;
             }
         }
 

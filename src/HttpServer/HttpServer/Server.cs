@@ -16,7 +16,6 @@ namespace HttpServer
         private const int MAX_SIZE = 1000;
         private const int PORT = 8080;
 
-        private readonly Pipeline _pipeline;
         private readonly TcpListener _listener;
 
         /// <summary>
@@ -24,11 +23,6 @@ namespace HttpServer
         /// </summary>
         public Server()
         {
-            _pipeline = new Pipeline();
-
-            _pipeline.AddProcessor(new LoggerProcessor());
-            _pipeline.AddProcessor(new DefaultResponseProcessor());
-
             _listener = new TcpListener(IPAddress.Any, PORT);
         }
 
@@ -58,13 +52,19 @@ namespace HttpServer
 
                     var rawRequest = connectionManager.ObtainRequestString(client);
 
-                    var parser = new RequestParser.RequestParser();
-
                     if (!string.IsNullOrEmpty(rawRequest))
                     {
+                        var parser = new RequestParser.RequestParser();
+
                         var request = parser.Parse(rawRequest);
 
-                        var response = _pipeline.Run(request);
+                        var pipeline = new Pipeline();
+
+                        pipeline.AddProcessor(new ValidationProcessor());
+                        pipeline.AddProcessor(new LoggerProcessor());
+                        pipeline.AddProcessor(new DefaultResponseProcessor());
+
+                        var response = pipeline.Run(request);
                         var rawResponse = parser.Serialize(response);
 
                         connectionManager.SendResponse(client, rawResponse);

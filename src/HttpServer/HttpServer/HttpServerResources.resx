@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DefaultProcessRequestStatus" xml:space="preserve">
-    <value>Solicitud del procesador por defecto</value>
+  <data name="DefaultProcessorRequestStatus" xml:space="preserve">
+    <value>Solicitud en procesador por defecto</value>
   </data>
-  <data name="DefaultProcessResponseStatus" xml:space="preserve">
-    <value>Respuesta del procesador por defecto</value>
+  <data name="DefaultProcessorResponseBody" xml:space="preserve">
+    <value>&lt;h1&gt;200&lt;/h1&gt;</value>
+  </data>
+  <data name="DefaultProcessorTrackingMessage" xml:space="preserve">
+    <value>Respuesta en el procesador por defecto</value>
   </data>
   <data name="HeaderContentType" xml:space="preserve">
     <value>Content-Type</value>
@@ -137,12 +140,6 @@
   </data>
   <data name="HeaderGeneralServerName" xml:space="preserve">
     <value>Server</value>
-  </data>
-  <data name="HtmlH1" xml:space="preserve">
-    <value>&lt;h1&gt;</value>
-  </data>
-  <data name="HtmlH1Closed" xml:space="preserve">
-    <value>&lt;/h1&gt;</value>
   </data>
   <data name="HttpVersion" xml:space="preserve">
     <value>1.1</value>
@@ -173,5 +170,17 @@
   </data>
   <data name="StatusCode200Message" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="StatusCode400" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="StatusCode400Message" xml:space="preserve">
+    <value>Bad Request</value>
+  </data>
+  <data name="ValidationProcessorResponseBody" xml:space="preserve">
+    <value>&lt;h1&gt;Bad request&lt;/h1&gt;</value>
+  </data>
+  <data name="ValidationProcessorTrackingMessage" xml:space="preserve">
+    <value>Solicitud en el validor</value>
   </data>
 </root>

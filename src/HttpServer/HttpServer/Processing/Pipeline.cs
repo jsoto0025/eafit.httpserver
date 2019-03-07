@@ -8,15 +8,18 @@ namespace HttpServer.Processing
     public class Pipeline
     {
         /// <summary>
-        /// Lista de procesadores disponibles
+        /// Lista de procesadores pendientes por ejecutar
         /// </summary>
-        private List<IProcessor> Processors { get; set; }
+        private Queue<IProcessor> PendingProcessors { get; set; }
 
-        private IProcessor[] ProcessorsCache { get; set; }
         /// <summary>
-        /// Inidice del procesador actual
+        /// Lista de procesadores ya ejecutados
         /// </summary>
-        private int currentProcessorIndex { get; set; }
+        private Stack<IProcessor> DoneProcessor { get; set; }
+
+        /// <summary>
+        /// Almacena una referencia a la respuesta
+        /// </summary>
         public IHttpResponse Response { get; private set; }
 
         /// <summary>
@@ -24,20 +27,13 @@ namespace HttpServer.Processing
         /// </summary>
         public Pipeline()
         {
-            Processors = new List<IProcessor>();
+            PendingProcessors = new Queue<IProcessor>();
+            DoneProcessor = new Stack<IProcessor>();
         }
 
         public void AddProcessor(IProcessor processor)
         {
-            Processors.Add(processor);
-        }
-
-        /// <summary>
-        /// Combierte el List de Procesadores en Array
-        /// </summary>
-        private void CacheProcessorsArray()
-        {
-            ProcessorsCache = Processors.ToArray();
+            PendingProcessors.Enqueue(processor);
         }
 
         /// <summary>
@@ -47,10 +43,7 @@ namespace HttpServer.Processing
         /// <returns>Devuelve el obejto Response que se retorna como respuesta al cliente.</returns>
         public IHttpResponse Run(IHttpRequest request)
         {
-            currentProcessorIndex = 0;
-            CacheProcessorsArray();
-            
-            ProcessRequest(request, currentProcessorIndex: 0);
+            ProcessRequest(request);
 
             return Response;
         }
@@ -61,11 +54,9 @@ namespace HttpServer.Processing
         /// <param name="request"></param>
         private void GoToNextProcessor(IHttpRequest request)
         {
-            currentProcessorIndex++;
-
-            if (currentProcessorIndex < ProcessorsCache.Length)
+            if (PendingProcessors.Count > 0)
             {
-                ProcessRequest(request, currentProcessorIndex);
+                ProcessRequest(request);
             }
             else
             {
@@ -77,10 +68,11 @@ namespace HttpServer.Processing
         /// Ejecuta el procesador actual
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="currentProcessorIndex"></param>
-        private void ProcessRequest(IHttpRequest request, int currentProcessorIndex)
+        private void ProcessRequest(IHttpRequest request)
         {
-            var processor = ProcessorsCache[currentProcessorIndex];
+            var processor = PendingProcessors.Dequeue();
+
+            DoneProcessor.Push(processor);
 
             processor.ProcessRequest(request, GoToNextProcessor, StopProcessing);
         }
@@ -93,9 +85,9 @@ namespace HttpServer.Processing
         {
             Response = response;
 
-            for (int i = ProcessorsCache.Length - 1; i >= 0; i--)
+            while (DoneProcessor.Count > 0)
             {
-                ProcessorsCache[i].ProcessResponse(response);
+                DoneProcessor.Pop().ProcessResponse(response);
             }
         }
     }

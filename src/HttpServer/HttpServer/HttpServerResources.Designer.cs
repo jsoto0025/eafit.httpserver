@@ -61,20 +61,29 @@ namespace HttpServer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solicitud del procesador por defecto.
+        ///   Looks up a localized string similar to Solicitud en procesador por defecto.
         /// </summary>
-        internal static string DefaultProcessRequestStatus {
+        internal static string DefaultProcessorRequestStatus {
             get {
-                return ResourceManager.GetString("DefaultProcessRequestStatus", resourceCulture);
+                return ResourceManager.GetString("DefaultProcessorRequestStatus", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Respuesta del procesador por defecto.
+        ///   Looks up a localized string similar to &lt;h1&gt;200&lt;/h1&gt;.
         /// </summary>
-        internal static string DefaultProcessResponseStatus {
+        internal static string DefaultProcessorResponseBody {
             get {
-                return ResourceManager.GetString("DefaultProcessResponseStatus", resourceCulture);
+                return ResourceManager.GetString("DefaultProcessorResponseBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Respuesta en el procesador por defecto.
+        /// </summary>
+        internal static string DefaultProcessorTrackingMessage {
+            get {
+                return ResourceManager.GetString("DefaultProcessorTrackingMessage", resourceCulture);
             }
         }
         
@@ -120,24 +129,6 @@ namespace HttpServer {
         internal static string HeaderGeneralServerName {
             get {
                 return ResourceManager.GetString("HeaderGeneralServerName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h1&gt;.
-        /// </summary>
-        internal static string HtmlH1 {
-            get {
-                return ResourceManager.GetString("HtmlH1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;/h1&gt;.
-        /// </summary>
-        internal static string HtmlH1Closed {
-            get {
-                return ResourceManager.GetString("HtmlH1Closed", resourceCulture);
             }
         }
         
@@ -228,6 +219,42 @@ namespace HttpServer {
         internal static string StatusCode200Message {
             get {
                 return ResourceManager.GetString("StatusCode200Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 400.
+        /// </summary>
+        internal static string StatusCode400 {
+            get {
+                return ResourceManager.GetString("StatusCode400", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bad Request.
+        /// </summary>
+        internal static string StatusCode400Message {
+            get {
+                return ResourceManager.GetString("StatusCode400Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h1&gt;Bad request&lt;/h1&gt;.
+        /// </summary>
+        internal static string ValidationProcessorResponseBody {
+            get {
+                return ResourceManager.GetString("ValidationProcessorResponseBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solicitud en el validor.
+        /// </summary>
+        internal static string ValidationProcessorTrackingMessage {
+            get {
+                return ResourceManager.GetString("ValidationProcessorTrackingMessage", resourceCulture);
             }
         }
     }

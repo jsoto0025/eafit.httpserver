@@ -33,7 +33,6 @@ namespace HttpServer.Processing.Processors
         public void ProcessResponse(IHttpResponse response)
         {
             Console.WriteLine(HttpServerResources.LoggerProcessResponseStatus);
-
         }
     }
 }
