@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
+using HttpServer.Logging;
 using HttpServer.RequestParser;
 
 namespace HttpServer.Processing.Processors
@@ -18,14 +20,14 @@ namespace HttpServer.Processing.Processors
         /// <param name="stopProcessing">Callback que se ejecuta cuando ocurrio un error</param>
         public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
-            Console.WriteLine(HttpServerResources.DefaultProcessorRequestStatus);
+            TraceLogger.ConsoleLog(HttpServerResources.DefaultProcessorRequestStatus);
 
             next(request);
         }
 
         public void ProcessResponse(IHttpResponse response)
         {
-            Console.WriteLine(HttpServerResources.DefaultProcessorTrackingMessage);
+            TraceLogger.ConsoleLog(HttpServerResources.DefaultProcessorTrackingMessage);
 
             response.Protocol = Protocol.HTTP;
             response.Version = HttpServerResources.HttpVersion;

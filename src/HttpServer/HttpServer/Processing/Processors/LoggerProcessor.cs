@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using HttpServer.Logging;
 using HttpServer.RequestParser;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -33,7 +34,7 @@ namespace HttpServer.Processing.Processors
                 sw.WriteLine();
             }
 
-            Console.WriteLine(HttpServerResources.LoggerProcessRequestStatus);
+            TraceLogger.ConsoleLog(HttpServerResources.LoggerProcessRequestStatus);
 
             next(request);
         }
@@ -44,7 +45,7 @@ namespace HttpServer.Processing.Processors
         /// <param name="response"></param>
         public void ProcessResponse(IHttpResponse response)
         {
-            Console.WriteLine(HttpServerResources.LoggerProcessResponseStatus);
+            TraceLogger.ConsoleLog(HttpServerResources.LoggerProcessResponseStatus);
         }
     }
 }

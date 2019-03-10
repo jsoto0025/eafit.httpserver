@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HttpServerResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Logging\TraceLogger.cs" />
     <Compile Include="Processing\IProcessor.cs" />
     <Compile Include="Processing\Pipeline.cs" />
     <Compile Include="Processing\Processors\DefaultResponseProcessor.cs" />
