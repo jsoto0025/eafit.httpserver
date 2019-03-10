@@ -29,7 +29,7 @@ http básico de prueba basado en el [RFC 2616](https://tools.ietf.org/html/rfc26
 
 
 
-## [Podcast - discusión inicial](https://youtu.be/uAXitENOrKI)
+## [Podcast - discusión inicial 19/02/2019](https://youtu.be/uAXitENOrKI)
  ![image.jpg](https://raw.githubusercontent.com/jsoto0025/eafit.httpserver/master//Documentation/images/podcast001.JPG)
 
 ## Descripción del procesamiento
