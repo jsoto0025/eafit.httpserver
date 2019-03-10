@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HttpServer.Logging;
 using HttpServer.RequestParser;
 
 namespace HttpServer.Processing.Processors
@@ -11,7 +12,7 @@ namespace HttpServer.Processing.Processors
     {
         public void ProcessRequest(IHttpRequest request, Action<IHttpRequest> next, Action<IHttpResponse> stopProcessing)
         {
-            Console.WriteLine(HttpServerResources.ValidationProcessorTrackingMessage);
+            TraceLogger.ConsoleLog(HttpServerResources.ValidationProcessorTrackingMessage);
 
             if (!request.Method.HasValue)
             {
@@ -25,7 +26,7 @@ namespace HttpServer.Processing.Processors
 
         public void ProcessResponse(IHttpResponse response)
         {
-            Console.WriteLine(HttpServerResources.ValidationProcessorTrackingMessage);
+            TraceLogger.ConsoleLog(HttpServerResources.ValidationProcessorTrackingMessage);
         }
 
         private IHttpResponse BuildErrorResponse()
